@@ -33,7 +33,7 @@ public class CarDaoImpl extends AbstractDao implements CarDao {
         psSave.executeUpdate();
         ResultSet rs = psSave.getGeneratedKeys();
         if (rs.next()) {
-            car.setId(rs.getLong(1));
+            car.setId(rs.getInt(1));
         }
         close(rs);
         return car;
@@ -78,7 +78,7 @@ public class CarDaoImpl extends AbstractDao implements CarDao {
         ResultSet rs = psGetBySupplier.getResultSet();
         Car car = new Car();
         while (rs.next()) {
-            car.setId(rs.getLong(1));
+            car.setId(rs.getInt(1));
             car.setSupplier(rs.getString(2));
             car.setModel(rs.getString(3));
             car.setPrice(rs.getDouble(4));
@@ -89,7 +89,7 @@ public class CarDaoImpl extends AbstractDao implements CarDao {
 
     private Car populateProduct(ResultSet rs) throws SQLException {
         Car car = new Car();
-        car.setId(rs.getLong(1));
+        car.setId(rs.getInt(1));
         car.setSupplier(rs.getString(2));
         car.setModel(rs.getString(3));
         car.setPrice(rs.getDouble(4));

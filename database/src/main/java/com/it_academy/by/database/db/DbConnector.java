@@ -1,7 +1,5 @@
 package com.it_academy.by.database.db;
 
-import com.it_academy.by.database.entities.Car;
-
 import java.sql.*;
 
 public class DbConnector {
